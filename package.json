@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd ./../frontend/client && npm build",
-    "install-client": "cd ./../frontend/client && npm install",
+    "build": "cd ../frontend/client && npm build",
+    "install-client": "cd ../frontend/client && npm install",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build --prefix frontend",
     "debug": "ndb server.js"
   },
