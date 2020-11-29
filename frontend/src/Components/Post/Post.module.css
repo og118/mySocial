@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+.Post{
+    background-color: white;
+    -webkit-box-shadow: 14px 14px 5px -8px rgba(0,0,0,0.21);
+    -moz-box-shadow: 14px 14px 5px -8px rgba(0,0,0,0.21);
+    box-shadow: 14px 14px 5px -8px rgba(0,0,0,0.21);
+    width: 80%;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    font-family: 'Roboto';
+    padding: 20px;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation { 
+        0% { 
+            opacity: 0; 
+        } 
+        100% { 
+            opacity: 1; 
+         } 
+    } 
+
+  
+ 
+
+.Post .Title {
+    font-weight: 900;
+    font-family: 'Roboto';
+    font-size: 25px;
+}
+
+.Post .Time {
+    font-size: smaller;
+}
+
+.Post .Content {
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.Username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.Votes {
+    -webkit-box-shadow: 0px -5px 16px -1px rgba(130,126,130,1);
+    -moz-box-shadow: 0px -5px 16px -1px rgba(130,126,130,1);
+    box-shadow: 0px -5px 16px -1px rgba(130,126,130,1);
+}
+
+.Edit {
+    float: right;
+    cursor: pointer;
+}
+
+.Options {
+    width: 100%;
+    padding: 5px;
+    margin-left: -5px;
+    cursor: pointer;
+    
+}
+
+.Options a {
+    text-decoration: none;
+    color: black;
+    display: block
+    
+}
+
+.Options:hover > a {
+    color: white
+}
+
+.Options:hover {
+    background-color: #3d3d3d;
+}
+
+.Options:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.Options:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.DeletedMsg {
+    text-align: center;
+    font-size: 15px;
+    font-style: oblique;
+}
+
+

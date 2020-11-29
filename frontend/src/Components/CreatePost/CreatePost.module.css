@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.CreatePost {
+    background-color: white;
+    width: 75%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 70px;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+}
+
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+  } 
+
+label {
+    font-weight: 700;
+}
+
+.form {
+    margin: 20px auto;
+    width: 80%;
+    text-align : center;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form input, textarea{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: black;
+    width: 40%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+@media(max-width: 600px) {
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: black;
+        width: 50%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        margin: auto;
+    }
+}
+
+@media(min-width: 1400px) {
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: black;
+        width: 30%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        margin: auto;
+    }
+}
+
+.Red {
+    margin-top: -2px;
+    font-weight: bold;
+    color: #ed4956;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  }
+  
+  .Green {
+    margin-top: -2px;
+    font-weight: bold;
+    color: green;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  }

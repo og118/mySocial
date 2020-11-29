@@ -1,0 +1,27 @@
+.SideDrawer {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    z-index: 200;
+    color: black;
+    height: 118.4px;
+    display: none;
+    -webkit-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.68);
+    box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.68);
+}
+
+.Show{
+    display: block;
+}
+
+.Hide{
+    display: none;
+}
+
+
+@media(min-width: 600px) {
+    .SideDrawer {
+        display: none;
+    }
+}

@@ -1,0 +1,39 @@
+
+
+.Button {
+    background-color: black;
+    color: white;
+    width: 215px;
+    margin-left: -17px;
+    padding: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: -33px;
+    height: 36px;
+    padding-top: 19px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+
+}
+
+.UserCard{
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+  }
+  
+  @keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+  } 
+
+  .Button:hover{
+      background-color: rgb(66, 66, 66);
+      
+  }

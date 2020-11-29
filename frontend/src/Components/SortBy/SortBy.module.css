@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.SortBy {
+    font-family: 'Roboto', sans-serif; 
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 28px;
+}
+
+
+
+form {
+    vertical-align: bottom;
+    padding-top: 7.8px;
+}
+
+select {
+    border-radius: 3px;
+}
+
+
+
+

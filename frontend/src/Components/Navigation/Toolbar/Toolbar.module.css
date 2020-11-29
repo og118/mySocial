@@ -1,0 +1,25 @@
+.Toolbar {
+    background-color: black;
+    color: white;
+    height: 83px;
+    z-index: 250;
+}
+
+.Title {
+    padding: 10px;
+    font-size: 50px;
+    width: 50px;
+    display: block;
+    float: left;
+    font-family: 'Montserrat';
+}
+
+@media(max-width: 600px) {
+    .Title {
+        font-size: 42px;
+        margin-top: 5px;
+    }
+    .DesktopOnly {
+        display: none;
+    }
+}

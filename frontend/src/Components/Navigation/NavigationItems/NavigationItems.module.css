@@ -1,0 +1,33 @@
+.NavigationItems {
+  padding-top: 30px;
+  display: flex;
+  flex-flow: row;
+  float: right;
+}
+/*
+.DropdownToggle {
+   list-style-type: none;
+  float: right;
+  display: block;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  display: block;
+  padding: 20px;
+  margin-top: -20px;
+  border-radius: 5px;
+  margin-left: -19px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 16px;
+ }*/
+
+@media(max-width : 600px) {
+  .NavigationItems {
+    margin-top: 5px;
+   text-align: center;
+   flex-flow: column;
+   float: left;
+   width: 100%;
+ }
+}
