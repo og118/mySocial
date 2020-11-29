@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd ../frontend && npm build",
-    "install-client": "cd ../frontend && npm install",
+    "build": "cd frontend && npm build",
+    "install-client": "cd frontend && npm install",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build --prefix frontend",
     "debug": "ndb server.js"
   },
@@ -41,6 +41,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.17.2",
