@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Post = require('./../models/postModel');
 const APIFeatures = require('./../utils/APIFeatures');
 const catchAsync = require('./../utils/catchAsync');
-const AppError = require('../utils/appError');
+const AppError = require('../utils/AppError');
 
 exports.verifyUser = catchAsync(async (req, res, next) => {
     const postId = req.params.id;
