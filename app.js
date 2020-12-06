@@ -14,7 +14,7 @@ const userRouter = require('./routes/userRoutes');
 
 
 const app = express();
-app.use(cors);
+
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'https://mys0cial.herokuapp.com'); // add when in dev: http://localhost:3000
     res.header('Access-Control-Allow-Credentials', true);
