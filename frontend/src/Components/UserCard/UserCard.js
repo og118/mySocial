@@ -22,6 +22,7 @@ const userCard = (props) => {
               <a
                 className={classes.Button}
                 target="_blank"
+                rel="noopener noreferrer"
                 href={`/user/${props.user._id}`}
               >
                 View Profile

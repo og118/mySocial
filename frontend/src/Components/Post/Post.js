@@ -166,7 +166,7 @@ class Post extends Component {
               button={<i className="fas fa-ellipsis-v" aria-hidden="true"></i>}
             >
               <li className={classes.Options}><a href={`/${this.props.postId}/edit`}>Edit Post</a></li>
-              <li className={classes.Options} onClick={this.deletePostHandler}><a>Delete Post</a></li>
+              <li className={classes.Options} onClick={this.deletePostHandler}>Delete Post</li>
             </DropDown>
           ) : null}
           <div className={classes.Title}>{this.props.title}</div>
