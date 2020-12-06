@@ -22,7 +22,7 @@ class Posts extends Component {
     console.log("cdm");
     Axios({
       method: "GET",
-      url: `http://localhost:9000/social/posts${
+      url: ` /social/posts${
         this.props.user ? `?user=${this.props.user}` : " "
       }`,
       headers: {
@@ -44,7 +44,7 @@ class Posts extends Component {
   userShowHandler = (id) => {
     if (id) {
       this.setState({ showUser: true });
-      Axios.get(`http://localhost:9000/social/users/${id}`).then((res) => {
+      Axios.get(`/social/users/${id}`).then((res) => {
         if (res.data) {
           console.log(res.data.data);
           this.setState({ user: res.data.data });
@@ -65,7 +65,7 @@ class Posts extends Component {
     this.setState({ loading: true });
     Axios({
       method: "GET",
-      url: `http://localhost:9000/social/posts?sort=${sortby}${
+      url: `/social/posts?sort=${sortby}${
         this.props.user ? `&user=${this.props.user}` : " "
       }`,
       headers: {
