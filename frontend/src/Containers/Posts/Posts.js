@@ -44,7 +44,7 @@ class Posts extends Component {
   userShowHandler = (id) => {
     if (id) {
       this.setState({ showUser: true });
-      Axios.get(`/social/user_profile/${id}`).then((res) => {
+      Axios.get(`/social/users/${id}`).then((res) => {
         if (res.data) {
           console.log(res.data.data);
           this.setState({ user: res.data.data });
@@ -65,7 +65,7 @@ class Posts extends Component {
     this.setState({ loading: true });
     Axios({
       method: "GET",
-      url: `/social/posts?sort=${sortby}${
+      url: ` /social/posts?sort=${sortby}${
         this.props.user ? `&user=${this.props.user}` : " "
       }`,
       headers: {
