@@ -55,7 +55,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/user/:userId"
+          path="/user_profile/:userId"
           render={() => (
             <UserPage
               cookies={this.props.cookies}
@@ -64,7 +64,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/me"
+          path="/user_profile/me"
           render={() => (
             <UserPage
               cookies={this.props.cookies}

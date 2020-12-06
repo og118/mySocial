@@ -44,7 +44,7 @@ class Posts extends Component {
   userShowHandler = (id) => {
     if (id) {
       this.setState({ showUser: true });
-      Axios.get(`/social/users/${id}`).then((res) => {
+      Axios.get(`/social/user_profile/${id}`).then((res) => {
         if (res.data) {
           console.log(res.data.data);
           this.setState({ user: res.data.data });
