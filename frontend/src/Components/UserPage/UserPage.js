@@ -23,8 +23,8 @@ class UserPage extends Component {
       method: "GET",
       url: `${
         params.userId
-          ? `http://localhost:9000/social/users/${params.userId}`
-          : `http://localhost:9000/social/users/me`
+          ? `/social/users/${params.userId}`
+          : `/social/users/me`
       }`,
       withCredentials: true,
     }).then((res) => {

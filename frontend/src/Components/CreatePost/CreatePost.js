@@ -19,7 +19,7 @@ class createPost extends Component {
 
     Axios({
       method: "POST",
-      url: `http://localhost:9000/social/posts`,
+      url: `/social/posts`,
       headers: {
         "Content-Type": "application/json",
       },

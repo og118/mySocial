@@ -16,7 +16,7 @@ class Layout extends Component {
   logoutHandler = () => {
     Axios({
         method: "GET",
-        url: 'http://localhost:9000/social/users/logout',
+        url: '/social/users/logout',
         withCredentials: true,
     }).then((res) => {
         let cookies = this.props.cookies

@@ -18,7 +18,7 @@ class editPost extends Component {
     console.log(params.id)
     Axios({
         method: "GET",
-        url: `http://localhost:9000/social/posts/${params.id}`,
+        url: `/social/posts/${params.id}`,
         headers: {
             "Content-Type": "application/json"
           },
@@ -45,7 +45,7 @@ class editPost extends Component {
 
     Axios({
       method: "PATCH",
-      url: `http://localhost:9000/social/posts/${params.id}`,
+      url: `/social/posts/${params.id}`,
       headers: {
         "Content-Type": "application/json",
       },

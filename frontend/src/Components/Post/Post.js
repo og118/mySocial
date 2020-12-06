@@ -35,7 +35,7 @@ class Post extends Component {
     // upvote request goes here
     Axios({
       method: "GET",
-      url: `http://localhost:9000/social/posts/${this.props.postId}/upvote`,
+      url: `/social/posts/${this.props.postId}/upvote`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,7 +56,7 @@ class Post extends Component {
     // console.log('downclick', this.state.downvotes)
     Axios({
       method: "GET",
-      url: `http://localhost:9000/social/posts/${this.props.postId}/downvote`,
+      url: `/social/posts/${this.props.postId}/downvote`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -130,7 +130,7 @@ class Post extends Component {
     this.setState({loading: true})
     Axios({
       method: "DELETE",
-      url: `http://localhost:9000/social/posts/${this.props.postId}`,
+      url: `/social/posts/${this.props.postId}`,
       headers: {
         "Content-Type": "application/json",
       },

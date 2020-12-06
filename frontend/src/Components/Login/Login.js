@@ -25,7 +25,7 @@ class Login extends Component {
 
     Axios({
       method: "POST",
-      url: `http://localhost:9000/social/users/login`,
+      url: `/social/users/login`,
       headers: {
         "Content-Type": "application/json",
       },

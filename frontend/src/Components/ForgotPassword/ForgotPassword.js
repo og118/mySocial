@@ -21,7 +21,7 @@ class forgotPassword extends Component {
     let token = document.getElementsByName("token")[0].value;
     Axios({
       method: "PATCH",
-      url: `http://localhost:9000/social/users/resetPassword`,
+      url: `/social/users/resetPassword`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -81,7 +81,7 @@ class forgotPassword extends Component {
     let email = document.getElementsByName("email")[0].value;
     Axios({
       method: "POST",
-      url: `http://localhost:9000/social/users/forgotPassword`,
+      url: `/social/users/forgotPassword`,
       headers: {
         "Content-Type": "application/json",
       },

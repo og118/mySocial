@@ -22,7 +22,7 @@ class signup extends Component {
     this.setState({loading: true})
     Axios({
       method: "POST",
-      url: `http://localhost:9000/social/users/signup`,
+      url: `/social/users/signup`,
       headers: {
         "Content-Type": "application/json",
       },
