@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../UI/Modal/Modal";
 import userImg from "./../../assets/img/userImg.png";
 import classes from "./UserCard.module.css";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 
 const userCard = (props) => {
