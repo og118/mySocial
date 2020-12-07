@@ -72,8 +72,8 @@
     text-decoration: none;
     color: black;
     display: block ;
-    padding: 0;
-    margin-left:0;
+    padding: 0 !important;
+    margin-left:0 !important;
 }
 
 .Options:hover p {
