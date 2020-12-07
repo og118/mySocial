@@ -71,7 +71,9 @@
 .Options p {
     text-decoration: none;
     color: black;
-    display: block 
+    display: block ;
+    padding: 0;
+    margin-left:0;
 }
 
 .Options:hover p {
