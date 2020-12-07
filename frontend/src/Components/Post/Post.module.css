@@ -76,12 +76,10 @@
     
 }
 
-.Options:hover > a {
-    color: white
-}
 
 .Options:hover {
     background-color: #3d3d3d;
+    color: white;
 }
 
 .Options:first-child {

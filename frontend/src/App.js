@@ -59,7 +59,7 @@ class App extends Component {
         />
 
         <Route
-          path="/user_profile=/:userId"
+          path="/user/:userId"
           render={() => (
             <UserPage
               cookies={this.props.cookies}
