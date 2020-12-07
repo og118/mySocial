@@ -27,6 +27,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/authenticate"
           render={() => (
@@ -36,6 +37,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/createPost"
           render={() => (
@@ -45,6 +47,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/:id/edit"
           render={() => (
@@ -54,6 +57,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/user_profile/:userId"
           render={() => (
@@ -63,6 +67,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/user_profile/me"
           render={() => (
@@ -72,7 +77,9 @@ class App extends Component {
             />
           )}
         />
+
         <Route path="/" exact render={() => <Posts />} />
+        
         <Route
           path="/updateMe"
           render={() => (
@@ -82,6 +89,7 @@ class App extends Component {
             />
           )}
         />
+
       </Layout>
     );
   }

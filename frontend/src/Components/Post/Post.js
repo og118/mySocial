@@ -4,7 +4,7 @@ import Votes from "./Votes/Votes";
 import Aux from "../../hoc/Auxilliary/Auxilliary";
 import ToggleFullPost from "./ToggleFullPost/ToggleFullPost";
 import Axios from "axios";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import DropDown from "../DropDown/DropDown";
 
 class Post extends Component {
@@ -165,7 +165,7 @@ class Post extends Component {
             <DropDown
               button={<i className="fas fa-ellipsis-v" aria-hidden="true"></i>}
             >
-              <li className={classes.Options}><a href={`/${this.props.postId}/edit`}>Edit Post</a></li>
+              <li className={classes.Options}><Link href={`/${this.props.postId}/edit`}>Edit Post</Link></li>
               <li className={classes.Options} onClick={this.deletePostHandler}>Delete Post</li>
             </DropDown>
           ) : null}
