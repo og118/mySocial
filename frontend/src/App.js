@@ -59,7 +59,7 @@ class App extends Component {
         />
 
         <Route
-          path="/user_profile/:userId"
+          path="/user_profile=/:userId"
           render={() => (
             <UserPage
               cookies={this.props.cookies}
@@ -69,7 +69,7 @@ class App extends Component {
         />
 
         <Route
-          path="/user_profile/me"
+          path="/user/me"
           render={() => (
             <UserPage
               cookies={this.props.cookies}
@@ -79,7 +79,7 @@ class App extends Component {
         />
 
         <Route path="/" exact render={() => <Posts />} />
-        
+
         <Route
           path="/updateMe"
           render={() => (

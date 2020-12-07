@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "./UserNav.module.css";
 
 
@@ -39,7 +40,7 @@ const userNav = (props) => {
         className={classes.dropdownContent + " dropdownContent"}
         id="dropdown"
       >
-        <a className={classes.profileLink} href='/me'>Profile</a>
+        <Link className={classes.profileLink} to='/me'>Profile</Link>
         <p onClick={props.logout}>Log Out</p>
       </div>
     </div>

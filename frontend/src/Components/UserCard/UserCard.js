@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../UI/Modal/Modal";
 import userImg from "./../../assets/img/userImg.png";
 import classes from "./UserCard.module.css";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 
 const userCard = (props) => {
@@ -19,14 +19,14 @@ const userCard = (props) => {
             <p>u/{props.user.username}</p>
             <p>{props.user.posts.length} Posts</p>
             <p>
-              <a
+              <Link
                 className={classes.Button}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={`/user_profile/${props.user._id}`}
+                //open link in a new tab
+                target="_blank" 
+                onClick={(event) => {event.preventDefault(); window.open(this.makeHref("route"));}} 
               >
                 View Profile
-              </a>
+              </Link>
             </p>
           </div>
         )}

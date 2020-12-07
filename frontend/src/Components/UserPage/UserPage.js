@@ -39,9 +39,9 @@ class UserPage extends Component {
   render() {
     let cookies = this.props.cookies;
     let userloggedIn = cookies.get("userLogin");
-    const {
-      match: { params },
-    } = this.props;
+    // const {
+    //   match: { params },
+    // } = this.props;
 
     let updateInfo =  <button className={classes.UpdateInfo}>Update Info</button>;
     if(!userloggedIn) {
