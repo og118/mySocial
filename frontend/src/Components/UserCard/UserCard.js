@@ -22,8 +22,7 @@ const userCard = (props) => {
               <Link
                 className={classes.Button}
                 //open link in a new tab
-                target="_blank" 
-                rel="noopener noreferrer"
+
                 to={`/user/${props.user._id}`}
               >
                 View Profile
