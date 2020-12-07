@@ -66,18 +66,18 @@
     padding: 5px;
     margin-left: -5px;
     cursor: pointer;
-    
 }
 
 .Options p {
     text-decoration: none;
     color: black;
-    display: block
-    
+    display: block 
 }
 
 .Options:hover p {
-    color: white
+    color: white;
+    padding: 0;
+    margin-left:0;
 }
 
 .Options:hover {

@@ -23,7 +23,6 @@ const userCard = (props) => {
                 className={classes.Button}
                 //open link in a new tab
                 target="_blank" 
-                onClick={(event) => {event.preventDefault(); window.open(this.makeHref("route"));}} 
                 to={`/user/${props.user._id}`}
               >
                 View Profile
