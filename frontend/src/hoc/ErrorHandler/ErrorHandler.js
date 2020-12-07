@@ -40,7 +40,7 @@ const errorHandler = (WrappedComponent) => {
                 console.log(this.state.error)
                 if(this.state.error.response){
                 if(this.state.error.response.data) {
-                    err=this.state.error.response.data
+                    err.message=this.state.error.response.data.status
                 } } 
                 else err.message = "Network Error, Please Try Again Later"
                         
