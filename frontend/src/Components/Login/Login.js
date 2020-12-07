@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 class Login extends Component {
   state = {
     loggedIn: null,
-    status: this.props.err ? "Please Log in to access this feature" : null,
+    status: this.props.errormsg ? "Please Log in to access this feature" : null,
     userId: null,
     username: null,
   };

@@ -37,7 +37,7 @@ const errorHandler = (WrappedComponent) => {
         render() {
             let err = {message: null} , modal;
             if(this.state.error) {
-
+                console.log(this.state.error)
                 if(this.state.error.response){
                 if(this.state.error.response.data) {
                     err=this.state.error.response.data
