@@ -69,7 +69,7 @@ class App extends Component {
         />
 
         <Route
-          path="/user/me"
+          path="/me"
           render={() => (
             <UserPage
               cookies={this.props.cookies}

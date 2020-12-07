@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../UI/Modal/Modal";
 import userImg from "./../../assets/img/userImg.png";
 import classes from "./UserCard.module.css";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 
 const userCard = (props) => {
@@ -24,6 +24,7 @@ const userCard = (props) => {
                 //open link in a new tab
                 target="_blank" 
                 onClick={(event) => {event.preventDefault(); window.open(this.makeHref("route"));}} 
+                to={`/user/${props.user._id}`}
               >
                 View Profile
               </Link>

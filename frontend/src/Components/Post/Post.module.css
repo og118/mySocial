@@ -69,17 +69,19 @@
     
 }
 
-.Options a {
+.Options p {
     text-decoration: none;
     color: black;
     display: block
     
 }
 
+.Options:hover p {
+    color: white
+}
 
 .Options:hover {
     background-color: #3d3d3d;
-    color: white;
 }
 
 .Options:first-child {
