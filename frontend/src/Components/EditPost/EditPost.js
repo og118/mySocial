@@ -81,6 +81,12 @@ class editPost extends Component {
             updated: false,
             loading: false
           });
+        } else {
+          this.setState({
+            status: this.props.errormsg.message,
+            updated: false,
+            loading: false
+          });
         }
       }
     });
