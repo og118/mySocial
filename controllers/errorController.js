@@ -11,6 +11,7 @@ const handleDuplicateFieldsDB = err => {
 }
 
 const handleValidationDB = err => {
+    console.log('handling val err')
     const errors = Object.values(err.errors).map(el => el.message)
     const message = `Invalid Input Data: ${errors.join('. ')}`;
     return new AppError(message, 400);
@@ -21,7 +22,8 @@ const handleJWTError = err => new AppError('Invalid Token: Please Login again', 
 const handleJWTExpiredError = err => new AppError('Token Expired: Please Login again', 401);
 
 
-const sendErrorDev = (err, res) => {
+const sendErrorDev = (err, res) => 
+{
     res.status(err.statusCode).json({
         status: err.status,
         message: err.message,
@@ -30,6 +32,7 @@ const sendErrorDev = (err, res) => {
     });
 };
 const sendErrorProd = (err, res) => {
+    
     if(err.isOperational){
         res.status(err.statusCode).json({
             status: err.status,
@@ -48,7 +51,14 @@ const sendErrorProd = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
-    // console.log(err.stack);
+    console.log(err);
+    if(err.name ==='ValidationError') {
+        let error = { ...err }
+         error = handleValidationDB(error)
+        if(process.env.NODE_ENV==='development') {sendErrorDev(error, res);}
+        else if(process.env.NODE_ENV==='production') {sendErrorProd(error, res)}
+    }
+
     err.statusCode = err.statusCode || 500;
     err.status= err.status || 'error';
    

@@ -37,7 +37,7 @@ exports.getUser = catchAsync(async (req, res, next) => {
 
 exports.createUser = catchAsync(async (req, res, next) => {
     const user = await User.create(req.body)
-    res.status(404).json({
+    res.status(200).json({
         status: "success",
         data: user
     })
@@ -55,7 +55,7 @@ exports.updateUser = catchAsync( async (req, res, next) => {
         return next(new AppError('User not found', 404))
     }
 
-    res.status(404).json({
+    res.status(200).json({
         status: "success",
         data: user
     });

@@ -9,6 +9,9 @@ import { withRouter } from "react-router-dom";
 import UserCard from "./../../Components/UserCard/UserCard";
 import Aux from "./../../hoc/Auxilliary/Auxilliary";
 
+// Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
+
+
 class Posts extends Component {
   state = {
     posts: null,
@@ -22,7 +25,7 @@ class Posts extends Component {
     console.log("cdm");
     Axios({
       method: "GET",
-      url: ` /social/posts${
+      url: `/social/posts${
         this.props.user ? `?user=${this.props.user}` : " "
       }`,
       headers: {

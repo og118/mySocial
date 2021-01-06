@@ -5,6 +5,9 @@ import { withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 import { withCookies } from "react-cookie";
 
+
+// Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
+
 class signup extends Component {
   state = {
     signedUp: null,

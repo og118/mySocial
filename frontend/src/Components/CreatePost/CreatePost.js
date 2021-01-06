@@ -4,6 +4,9 @@ import Axios from "axios";
 import { withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 
+// Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
+
+
 class createPost extends Component {
   state = {
     status: null,
@@ -36,6 +39,7 @@ class createPost extends Component {
           this.props.history.push("/");
         }, 1000);
       } else {
+        console.log(this.props.errormsg)
         let errmsg, errors;
         if (this.props.errormsg.error) {
           if (this.props.errormsg.error.errors) {
@@ -49,7 +53,13 @@ class createPost extends Component {
             errors = errors.join(", ");
             this.props.errormsg.message = errors;
           }
-          // console.log(res.response.data.message)
+          console.log(res.response.data.message)
+          this.setState({
+            status: this.props.errormsg.message,
+            created: false,
+            loading: false
+          });
+        } else {
           this.setState({
             status: this.props.errormsg.message,
             created: false,
