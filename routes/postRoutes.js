@@ -11,7 +11,7 @@ router
 router
     .route('/:id')
     .get(postController.getPost)
-    .patch(authController.protect, authController.restrictTo('user'), postController.verifyUser, postController.updatePost)
+    .patch(authController.protect, authController.restrictTo('user', 'admin'), postController.verifyUser, postController.updatePost)
     .delete(authController.protect, postController.verifyUser, postController.deletePost);
 
 router.patch('/blacklist/:postId', authController.protect, authController.restrictTo('admin'), postController.blackListPost)

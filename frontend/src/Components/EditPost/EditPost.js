@@ -4,6 +4,8 @@ import Axios from "axios";
 import { withRouter } from "react-router-dom";
 import Spinner from "../UI/Spinner/Spinner";
 
+// Axios.defaults.baseURL = 'http://localhost:9000' //disable in prod
+
 class editPost extends Component {
   state = {
     status: null,

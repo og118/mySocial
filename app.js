@@ -16,7 +16,7 @@ const userRouter = require('./routes/userRoutes');
 const app = express();
 
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://mys0cial.herokuapp.com'); // add when in prod: http://mys0cial.herokuapp.com
+    res.header('Access-Control-Allow-Origin', 'http://mys0cial.herokuapp.com'); // add when in prod: http://mys0cial.herokuapp.com, dev:http://localhost:3000
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
