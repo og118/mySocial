@@ -23,6 +23,7 @@ class signup extends Component {
     let passwordConfirm = document.getElementsByName("confirmPassword")[0].value;
     // let bio = document.getElementsByName("bio")[0].value
     this.setState({loading: true})
+
     Axios({
       method: "POST",
       url: `/social/users/signup`,
@@ -126,7 +127,7 @@ class signup extends Component {
     } else {
       attachedClasses.push(classes.Red);
     }
-    console.log(attachedClasses);
+    // console.log(attachedClasses);
     return (
       <div className={classes.loginpage}>
         <div className={classes.form}>{this.state.loading ? <Spinner/> : (
