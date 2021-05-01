@@ -24,4 +24,4 @@ const updateMe = (props) => {
     )
 }
 
-export default updateMe;
+export default withRouter(withCookies(updateMe));

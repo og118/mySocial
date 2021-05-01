@@ -5,6 +5,7 @@ const handleCastErrorDB = err => {
 }
 
 const handleDuplicateFieldsDB = err => {
+    console.log('handling dupl err', err.errmsg)
     const value = err.errmsg.match(/(["'])(?:(?=(\\?))\2.)*?\1/)
     const message = `Duplicate field value: ${value[0]} Please use another value`;
     return new AppError(message, 400)
@@ -51,28 +52,21 @@ const sendErrorProd = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
-    console.log(err);
-    if(err.name ==='ValidationError') {
-        let error = { ...err }
-         error = handleValidationDB(error)
-        if(process.env.NODE_ENV==='development') {sendErrorDev(error, res);}
-        else if(process.env.NODE_ENV==='production') {sendErrorProd(error, res)}
-    }
+    console.log(err.errmsg);
+    let error = { ...err }
+    if (error.name === 'CastError') error = handleCastErrorDB(error);
+    if (error.code === 11000) error = handleDuplicateFieldsDB(error);
+    if (error.name === 'ValidationError') error = handleValidationDB(error);
+    if (error.name === 'JsonWebTokenError') error = handleJWTError(error);
+    if (error.name === 'TokenExpiredError') error = handleJWTExpiredError(error);
 
-    err.statusCode = err.statusCode || 500;
-    err.status= err.status || 'error';
+    error.statusCode = error.statusCode || 500;
+    error.status= error.status || 'Network Error! Please try again later!';
    
     if(process.env.NODE_ENV === 'development'){
-        sendErrorDev(err, res);
+        sendErrorDev(error, res);
     } else if (process.env.NODE_ENV === 'production') {
-        let error = { ...err }
-        if (error.name === 'CastError') error = handleCastErrorDB(error);
-        if (error.code === 11000) error = handleDuplicateFieldsDB(error);
-        if (error.name === 'ValidationError') error = handleValidationDB(error);
-        if (error.name === 'JsonWebTokenError') error = handleJWTError(error);
-        if (error.name === 'TokenExpiredError') error = handleJWTExpiredError(error);
         sendErrorProd(error, res);
-        
     }
     
 }
