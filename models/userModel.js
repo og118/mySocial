@@ -3,6 +3,7 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const { stringify } = require('querystring');
+var uniqueValidator = require('mongoose-unique-validator');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -49,7 +50,7 @@ const userSchema = new mongoose.Schema({
             validator: function(el) {
                 return el === this.password
             },
-            message: 'both passwords do not match'
+            message: 'Both passwords do not match'
         },
         select: false
     },
@@ -83,6 +84,7 @@ const userSchema = new mongoose.Schema({
     toObject: {virtuals: true}
 });
 
+userSchema.plugin(uniqueValidator, {message: '{PATH} already exists!' });
 // userSchema.pre(/^find/, function(next) {
 //     this.find({active: {$ne: false}});
 //     next();

@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 import UserCard from "./../../Components/UserCard/UserCard";
 import Aux from "./../../hoc/Auxilliary/Auxilliary";
 
-// Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
+Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
 
 
 class Posts extends Component {
