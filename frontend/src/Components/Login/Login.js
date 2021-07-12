@@ -3,7 +3,7 @@ import classes from "./Login.module.css";
 import Axios from "axios";
 import { withRouter } from "react-router-dom";
 
-Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
+// Axios.defaults.baseURL = 'http://localhost:9000'       //disable in prod.
 
 class Login extends Component {
   state = {
