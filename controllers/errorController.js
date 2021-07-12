@@ -4,16 +4,10 @@ const handleCastErrorDB = err => {
     return new AppError(message, 400);
 }
 
-const handleDuplicateFieldsDB = err => {
-    console.log('handling dupl err', err.errmsg)
-    const value = err.errmsg.match(/(["'])(?:(?=(\\?))\2.)*?\1/)
-    const message = `Duplicate field value: ${value[0]} Please use another value`;
-    return new AppError(message, 400)
-}
 
 const handleValidationDB = err => {
-    console.log('handling val err')
-    const errors = Object.values(err.errors).map(el => el.message)
+    // console.log('handling val err');
+    const errors = Object.values(err.errors).map(el => el.message);
     const message = `Invalid Input Data: ${errors.join('. ')}`;
     return new AppError(message, 400);
 }
@@ -25,6 +19,7 @@ const handleJWTExpiredError = err => new AppError('Token Expired: Please Login a
 
 const sendErrorDev = (err, res) => 
 {
+    console.log(err)
     res.status(err.statusCode).json({
         status: err.status,
         message: err.message,
@@ -44,7 +39,7 @@ const sendErrorProd = (err, res) => {
     else{
         console.error('error', err);
         res.status(500).json({
-            status: 'error',
+            status: 'Network Error',
             message: 'Something went very wrong'
         });
     }
@@ -52,18 +47,19 @@ const sendErrorProd = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
-    console.log(err);
+
     let error = { ...err }
-    if (error.name === 'CastError') error = handleCastErrorDB(error);
-    if (error.code === 11000) error = handleDuplicateFieldsDB(error);
-    if (error.name === 'ValidationError') error = handleValidationDB(error);
-    if (error.name === 'JsonWebTokenError') error = handleJWTError(error);
-    if (error.name === 'TokenExpiredError') error = handleJWTExpiredError(error);
+    console.log(error.name);
+    if (err.name === 'CastError') error = handleCastErrorDB(error);
+    if (err.name === 'ValidationError') error = handleValidationDB(error);
+    if (err.name === 'JsonWebTokenError') error = handleJWTError(error);
+    if (err.name === 'TokenExpiredError') error = handleJWTExpiredError(error);
 
     error.statusCode = error.statusCode || 500;
     error.status= error.status || 'Network Error! Please try again later!';
    
     if(process.env.NODE_ENV === 'development'){
+        console.log('sending dev error')
         sendErrorDev(error, res);
     } else if (process.env.NODE_ENV === 'production') {
         sendErrorProd(error, res);
